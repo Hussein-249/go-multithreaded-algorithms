@@ -1,5 +1,7 @@
 package sortmulti
 
+import "sync"
+
 // having trouble with constraints, defining this interface as a template to accept multiple data types
 type Ordered interface {
 	~int | ~int8 | ~int16 | ~int32 | ~int64 | ~uint | ~uint8 | ~uint16 | ~uint32 | ~uint64 | ~float32 | ~float64
@@ -25,10 +27,32 @@ func MergeSort[T Ordered](inputArr []T) []T {
 	// fmt.Println(leftSlice)
 	// fmt.Println(rightSlice)
 
-	MergeSort(leftSlice)
-	MergeSort(rightSlice)
+	var waitGroup sync.WaitGroup
 
-	tempSlice := []T{88}
+	waitGroup.Add(2)
 
-	return tempSlice
+	var left, right []T
+
+	go func() {
+		defer waitGroup.Done()
+		left = MergeSort(left)
+	}()
+
+	go func() {
+		defer waitGroup.Done()
+		right = MergeSort(right)
+	}()
+
+	waitGroup.Wait()
+
+	if leftSlice[0] < rightSlice[0] {
+		return append(leftSlice, rightSlice...)
+	}
+
+	return append(rightSlice, leftSlice...)
 }
+
+// for recursive calls
+// func merge[T Ordered](leftSlice, rightSlice []T) []T {
+
+// }

@@ -3,12 +3,26 @@ package main // execute package
 import (
 	"fmt"
 
-	"github.com/Hussein-249/go-multithreaded-algorithms/internal/sortmulti"
+	"sort"
+
+	"go-multithreaded-algorithms/internal/sortmulti"
+
+	"go-multithreaded-algorithms/internal/timer"
 )
 
 func main() {
-	var smallArray = []int{90, 56, 30, 23, 1, 65, 78, 89, 99, 45}
-	var emptyArray = []int{}
-	fmt.Println(sortmulti.MergeSort(smallArray))
-	fmt.Println(sortmulti.MergeSort(emptyArray)) // should return empty array
+	var smallArrayOdd = []int{90, 56, 30, 23, 1, 65, 78, 89, 99, 45, 44}
+
+	fmt.Println(sortmulti.MergeSort(smallArrayOdd))
+
+	timer.TimerWrapper()
+
+	fmt.Println("Now sorting by in-built function:")
+
+	var newArray = []int{90, 56, 30, 23, 1, 65, 78, 89, 99, 45}
+
+	sort.Ints(newArray)
+
+	fmt.Println(newArray)
+
 }
