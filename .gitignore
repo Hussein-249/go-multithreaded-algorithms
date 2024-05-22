@@ -7,3 +7,7 @@
 
 # Test binary, built with `go test -c`
 *.test
+
+# custom test data for sorting
+*.txt
+*.py

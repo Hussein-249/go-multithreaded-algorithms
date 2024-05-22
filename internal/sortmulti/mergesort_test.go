@@ -1,19 +1,12 @@
-package testdata
+// ignore VS Code suggestions - do not include _test in package name
+// cannot export these functions if _test.go file
+package sortmulti
 
 import (
-	"fmt"
-	"math/rand"
 	"os"
 )
 
-func randomNumberGenerator() {
-	min := 10
-	max := 20
-	randomIntInRange := rand.Intn(max-min+1) + min
-	fmt.Println("Random Integer in Range:", randomIntInRange)
-}
-
-func readTextFile(filename string) {
+func LoadTextFileData(filename string) {
 	file, err := os.Open(filename)
 	if err != nil {
 		panic(err)

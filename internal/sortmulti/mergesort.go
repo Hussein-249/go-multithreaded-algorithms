@@ -1,6 +1,8 @@
 package sortmulti
 
-import "sync"
+import (
+	"sync"
+)
 
 // having trouble with constraints, defining this interface as a template to accept multiple data types
 type Ordered interface {
