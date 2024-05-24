@@ -9,12 +9,9 @@ type Ordered interface {
 }
 
 // for later, passing as pointer / addr
-// type MergeFunc func[T Ordered]([]T)
-// []T
+type SortSignature[T Ordered] func([]T) []T
 
-func RandArrGen(size int) []int {
-
-	max := 1000000
+func RandArrGen(size, max int) []int {
 
 	results := make([]int, size)
 
@@ -24,5 +21,18 @@ func RandArrGen(size int) []int {
 
 		results[i] = randomIntInRange
 	}
+	return results
+}
+
+func RandArrGenFloat64(size int, min, max float64) []float64 {
+
+	results := make([]float64, size)
+
+	for i := 0; i < size; i++ {
+		randf := rand.Float64()
+		randfs := randf*(max-min) + min
+		results[i] = randfs
+	}
+
 	return results
 }

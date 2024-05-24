@@ -18,18 +18,14 @@ func main() {
 
 	fmt.Println(sortmulti.MergeSort(smallArrayOdd))
 
-	timer.TimerWrapper()
+	timer.TimerWrapper(sortmulti.MergeSort[int], smallArrayOdd)
 
 	fmt.Println("Now sorting by in-built function:")
 
-	var newArray = []int{90, 56, 30, 23, 1, 65, 78, 89, 99, 45}
-
-	largeArray := common.RandArrGen(999999)
+	largeArray := common.RandArrGen(999999, 19999999999)
 
 	sort.Ints(largeArray)
 
-	sort.Ints(newArray)
-
-	fmt.Println(newArray)
+	fmt.Println(largeArray)
 
 }

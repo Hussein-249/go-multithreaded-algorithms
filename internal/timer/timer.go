@@ -4,7 +4,7 @@ import (
 	"fmt"
 	"time"
 
-	"go-multithreaded-algorithms/internal/sortmulti"
+	"go-multithreaded-algorithms/internal/common"
 )
 
 func TimeFunction() func() {
@@ -23,12 +23,10 @@ func TimeFunction() func() {
 
 }
 
-func TimerWrapper() {
-
-	var smallArray = []int{90, 56, 30, 23, 1, 65, 78, 89, 99, 45, 90, 56, 30, 23, 1, 65, 78, 89, 99, 45, 90, 56, 30, 23, 1, 65, 78, 89, 99, 45, 90, 56, 30, 23, 1, 65, 78, 89, 99, 45, 90, 56, 30, 23, 1, 65, 78, 89, 99, 45, 90, 56, 30, 23, 1, 65, 78, 89, 99, 45, 90, 56, 30, 23, 1, 65, 78, 89, 99, 45, 90, 56, 30, 23, 1, 65, 78, 89, 99, 45, 90, 56, 30, 23, 1, 65, 78, 89, 99, 45, 90, 56, 30, 23, 1, 65, 78, 89, 99, 45}
+func TimerWrapper[T common.Ordered](targetFunc common.SortSignature[T], data []T) {
 
 	defer TimeFunction()()
 
-	sortmulti.MergeSort(smallArray)
+	targetFunc(data)
 
 }
