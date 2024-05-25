@@ -13,8 +13,6 @@ func MergeSort[T Ordered](inputArr []T) []T {
 	// do not use len - shadows len function!
 	length := len(inputArr)
 
-	// will see if bitwise ops more efficient,
-	// but might not work since we accept floats
 	if length == 0 {
 		return []T{}
 	}

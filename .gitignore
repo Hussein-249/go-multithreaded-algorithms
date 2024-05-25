@@ -11,3 +11,6 @@
 # custom test data for sorting
 *.txt
 *.py
+
+# temporarily
+go-multithreaded_test.go

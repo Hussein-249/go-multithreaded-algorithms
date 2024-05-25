@@ -12,6 +12,7 @@ type Ordered interface {
 type SortSignature[T Ordered] func([]T) []T
 
 func RandArrGen(size, max int) []int {
+	// Returns a slice of randomly generated integers
 
 	results := make([]int, size)
 
