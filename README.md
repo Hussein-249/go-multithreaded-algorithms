@@ -1,12 +1,12 @@
 # Multithreaded Algorithms (Go)
-![](https://img.shields.io/badge/Tests-Passing?-green)
+![](https://img.shields.io/badge/Tests-Passing-green)
 
 ## Purpose
-Tinkering with Go. This module is not meant to be a production-grade solution. It is meant to be a proof-of-concept of the skills in the Go programming language.
-
-I am new to Go, and as such I intend to experiment with goroutines to gain a better understanding of Go. Goroutines are a key feature of Go (even Go's compiler takes advantage of multithreading, hence the fast compile times), and as such multi-threaded algorithms seemed to be the 
+This module is not meant to be a production-grade or professional solution. It is meant to be a proof-of-concept repo, and to demonstrate my skills and understanding of the Go programming language.
 
 ## Implemented Structures and Algorithms
+
+Some of these data structures and algorithms may not inherently benefit from multithreading, such as the RootishArrayStack, and thus have not been implemented with goroutines, but 
 
 ### Algorithms
 
@@ -24,7 +24,23 @@ I am new to Go, and as such I intend to experiment with goroutines to gain a bet
 
 ### Data Structures
 
-- [ ] None
+- [ ] Trie
+- [ ] RootishArrayStack
 
-## Implemented Structures and Algorithms
- I've currently implemented unit tests for completed algorithms. The unit tests are passing, and you can run them by running ```go test``` in the target package directory. However, go test has different results than individually running these tests. This will be looked into for the following commits.
+## Tests
+ I have currently implemented unit tests for completed algorithms. The unit tests are passing, and you can run them all by running 
+ ``` bash
+ go test -count=1 ./...
+ ``` 
+ This can be executed at the module level (targets all tests) or at the package level (targets all tests in the package). When executing multiple iterations of tests where the actual test content may vary, be sure to include -count=1 as this disables test caching.
+ <br>
+
+ To test an individual file, run  
+ ``` bash
+ go test -run <filename>
+ ```
+
+ ## Documentation
+
+ Work in progress.
+ 

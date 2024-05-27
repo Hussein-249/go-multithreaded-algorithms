@@ -1,8 +1,18 @@
+/*
+Testfile targeting the mergesort algorithm, source mergesort.go
+
+To run the tests in this file only, execute
+go test -run .\mergesort_test.go
+
+Run all tests in the package via
+go test -count=1 ./...
+*/
+
 // ignore VS Code suggestions - do not include _test in package name
-// cannot export these functions if _test.go file
+// cannot export these functions if _test.go file?
 package sortmulti
 
-// neet to get testify/assert although the modules listed in go.mod is stretchr/testify
+// must import testify/assert although the modules listed in go.mod is stretchr/testify
 import (
 	"os"
 
@@ -50,5 +60,5 @@ func TestMergeSortInts(t *testing.T) {
 
 	result := MergeSort(sampleArr)
 
-	assert.Equal(t, expectedArr, result, "Should correctly sort.")
+	assert.Equal(t, expectedArr, result, "Should correctly sort, MergeSort not sorting!")
 }

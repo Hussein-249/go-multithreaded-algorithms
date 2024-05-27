@@ -1,3 +1,14 @@
+/*
+Testfile targeting the countingsort algorithm, source countingsort.go
+
+To run the tests in this file only, execute
+go test -run .\countingsort_test.go
+
+Run all tests in the package via
+go test -count=1 ./...
+*/
+
+// must import testify/assert although the modules listed in go.mod is stretchr/testify
 package sortmulti
 
 import (
