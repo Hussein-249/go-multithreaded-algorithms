@@ -20,7 +20,7 @@ import (
 
 	"testing"
 
-	"go-multithreaded-algorithms/internal/common"
+	"algoroutine/internal/common"
 
 	"github.com/stretchr/testify/assert"
 )

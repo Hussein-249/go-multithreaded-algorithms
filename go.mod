@@ -1,4 +1,4 @@
-module go-multithreaded-algorithms
+module algoroutine
 
 go 1.22.3
 

@@ -5,11 +5,11 @@ import (
 
 	"sort"
 
-	"go-multithreaded-algorithms/internal/common"
+	"algoroutine/internal/common"
 
-	"go-multithreaded-algorithms/internal/sortmulti"
+	"algoroutine/internal/sortmulti"
 
-	"go-multithreaded-algorithms/internal/timer"
+	"algoroutine/internal/timer"
 )
 
 func main() {

@@ -4,7 +4,7 @@ import (
 	"fmt"
 	"time"
 
-	"go-multithreaded-algorithms/internal/common"
+	"algoroutine/internal/common"
 )
 
 func TimeFunction() func() {

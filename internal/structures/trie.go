@@ -15,6 +15,13 @@ type TrieNode struct {
 	final    bool
 }
 
+func InitTrie(str string) *TrieNode {
+	return &TrieNode{
+		children: make(map[rune]*TrieNode),
+		final:    false,
+	}
+}
+
 func (tnode *TrieNode) AddChild(char rune) {
 	if tnode.children == nil {
 		tnode.children = make(map[rune]*TrieNode)
@@ -46,12 +53,22 @@ func (tnode *TrieNode) RemoveDirectChild(char rune) {
 	}
 }
 
+// incomplete
 func (tnode *TrieNode) RemoveString(str string) {
 	toslice := []rune(str)
 	for i := len(toslice) - 1; i >= 0; i-- {
 		fmt.Printf("%c", toslice[i])
 	}
 
+}
+
+// incomplete
+func (troot *TrieNode) HasString(str string) bool {
+	toslice := []rune(str)
+	for i := 0; i <= len(toslice); i++ {
+		fmt.Printf("%c", toslice[i])
+	}
+	return false
 }
 
 // func (root *TrieNode) getAllStrings() []string {
