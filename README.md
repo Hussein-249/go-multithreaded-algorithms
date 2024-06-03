@@ -6,7 +6,7 @@ This module is not meant to be a production-grade or professional solution. It i
 
 ## Implemented Structures and Algorithms
 
-Some of these data structures and algorithms may not inherently benefit from multithreading, such as the RootishArrayStack, and thus have not been implemented with goroutines, but 
+Some of these data structures and algorithms may not inherently benefit from multithreading, such as the RootishArrayStack, and thus have not been implemented with goroutines. However, these still serve as useful structures as Go does not have built-in implementations of these structures.
 
 ### Algorithms
 
